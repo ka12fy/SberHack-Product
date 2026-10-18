@@ -22,7 +22,7 @@ import ru.hideandseek.nychka.ui.theme.NychkaTheme
  */
 object NychkaConfig {
     const val CONTENT_URL =
-        "https://raw.githubusercontent.com/ka12fy/SberHack/main/content/hideandseek.json"
+        "https://raw.githubusercontent.com/ka12fy/SberHack-Product/main/content/hideandseek.json"
 
     /**
      * Режим демо для защиты: после находки Нычка сразу прячется в другом месте
