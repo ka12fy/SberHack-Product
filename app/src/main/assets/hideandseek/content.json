@@ -1,0 +1,97 @@
+{
+  "version": 6,
+  "enabled": true,
+  "timeZone": "Europe/Moscow",
+  "salt": "nychka-2026",
+
+  "schedule": {
+    "startDate": "2026-10-01",
+    "endDate": "2027-08-31",
+    "daysOfWeek": [1, 2, 3, 4, 5, 6, 7],
+    "everyNDays": 1,
+    "chancePercent": 100,
+    "hours": { "from": 0, "to": 24 },
+    "avoidRepeat": true
+  },
+
+  "look": {
+    "sizeDp": 56,
+    "peek": 0.55,
+    "appearDelayMs": 1200,
+    "messageMs": 7000
+  },
+
+  "creatures": [
+    {
+      "id": "nychka", "name": "Нычка", "color": "#FF8A3D", "weight": 10,
+      "sprites": {
+        "peek":      { "image": "asset:hideandseek/nychka/peek.webp", "blink": "asset:hideandseek/nychka/peek_blink.webp",
+                       "heightDp": 60, "anchor": [0.356, 0.941] },
+        "side":      { "image": "asset:hideandseek/nychka/side.webp", "blink": "asset:hideandseek/nychka/side_blink.webp",
+                       "heightDp": 76, "anchor": [0.081, 0.73] },
+        "found":     { "image": "asset:hideandseek/nychka/surprised.webp", "heightDp": 116, "anchor": [0.38, 0.995] },
+        "celebrate": { "image": "asset:hideandseek/nychka/celebrate.webp", "heightDp": 114, "anchor": [0.39, 0.995] },
+        "run":       { "image": "asset:hideandseek/nychka/run.webp", "heightDp": 112, "anchor": [0.62, 0.99] }
+      }
+    },
+    { "id": "zolotik", "name": "Золотая Нычка",  "color": "#FFC23D", "weight": 1, "rare": true, "spritesFrom": "nychka" },
+    { "id": "snezhok", "name": "Снежная Нычка",  "color": "#8FD3FF", "weight": 12, "from": "2026-12-15", "to": "2027-01-15", "spritesFrom": "nychka" }
+  ],
+
+  "spots": [
+    { "id": "main.banner",              "edge": "top",   "align": 0.85, "weight": 3 },
+    { "id": "main.card",                "edge": "top",   "align": 0.75, "weight": 2 },
+    { "id": "piggy.goal",               "edge": "top",   "align": 0.85, "weight": 3 },
+    { "id": "piggy.pig",                "edge": "left",  "align": 0.6,  "weight": 2 },
+    { "id": "piggy.archive",            "edge": "top",   "align": 0.85, "weight": 1 },
+    { "id": "tasks.start_card",         "edge": "top",   "align": 0.85, "weight": 2 },
+    { "id": "content.hero",             "edge": "top",   "align": 0.8,  "weight": 2 },
+    { "id": "content.audio",            "edge": "top",   "align": 0.85, "weight": 1 },
+    { "id": "content.algoritmika_mascot", "edge": "left", "align": 0.5, "weight": 1 },
+
+    { "id": "main.edge_right",          "edge": "left",  "align": 0.3, "run": "left",  "weight": 2 },
+    { "id": "tasks.edge_right",         "edge": "left",  "align": 0.5, "run": "left",  "weight": 2 },
+    { "id": "piggy.edge_left",          "edge": "right", "align": 0.5, "run": "right", "weight": 2 },
+    { "id": "content.edge_left",        "edge": "right", "align": 0.5, "run": "right", "weight": 2 }
+  ],
+
+  "tips": [
+    "Откладывай понемногу с каждых карманных — копилка растёт быстрее, чем кажется.",
+    "Хочешь что-то купить? Подожди один день. Если всё ещё хочется — значит, правда нужно.",
+    "Кешбэк — это часть денег, которая возвращается тебе после покупки.",
+    "Никому не называй код из СМС, даже если звонят «из банка». Настоящий банк его не спрашивает.",
+    "Поставь цель в копилке: копить на что-то конкретное намного легче.",
+    "Сравни цены в двух местах — одна и та же вещь часто стоит по-разному.",
+    "Записывай, на что тратишь карманные: через неделю станет видно, куда уходят деньги.",
+    "Раздели деньги на три части: потратить сейчас, отложить на цель и на подарки близким.",
+    "Перед покупкой спроси себя: это «хочу» или «нужно»?",
+    "Скидка выгодна, только если вещь тебе правда нужна.",
+    "Покупки в играх — это настоящие деньги. Перед покупкой посоветуйся со взрослыми.",
+    "Подписки списывают деньги каждый месяц. Проверь вместе с родителями, какие у тебя включены.",
+    "Не переходи по ссылкам из сообщений про «выигрыш» или «подарок» — так часто крадут деньги.",
+    "Хочешь дорогую вещь? Посчитай, сколько недель на неё копить, — цель станет понятнее.",
+    "Сделал дело за награду — отложи часть в копилку.",
+    "Проценты в копилке — это деньги, которые банк добавляет тебе за то, что ты копишь.",
+    "Деньги на карте такие же настоящие, как монетки в копилке.",
+    { "text": "Подарочные деньги на Новый год — отличный старт для копилки.", "from": "2026-12-15", "to": "2027-01-15" }
+  ],
+
+  "demo": {
+    "script": ["main.banner", "heist", "piggy.pig", "tasks.start_card", "content.hero", "main.edge_right", "piggy.goal"],
+    "loop": true
+  },
+
+  "specialDays": [
+    { "date": "2026-10-18", "creature": "nychka", "spot": "main.banner" },
+    { "date": "2026-10-19", "creature": "nychka", "spot": "piggy.goal" },
+    { "date": "2026-12-31", "creature": "snezhok", "spot": "main.card", "tip": "С наступающим! Подумай, на что будешь копить в новом году." }
+  ],
+
+  "texts": {
+    "foundTitle": "Нашёл!",
+    "foundBody": "Завтра {name} спрячется в другом месте.",
+    "streak": "Ты находишь меня {streakDays} подряд!",
+    "tipTitle": "Совет дня",
+    "accessibilityLabel": "Здесь кто-то прячется. Нажми, чтобы найти"
+  }
+}
